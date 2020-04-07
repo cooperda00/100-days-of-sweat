@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//Modules
+import React from "react";
+//Styles
+import styled from "styled-components";
+import { flex } from "./Utilities";
+//Components
+import Days from "./components/Days";
+//Base CSS
+import "./base.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp>
+      <h1 className="title">#100 Days of Sweat</h1>
+      <Days />
+    </StyledApp>
   );
 }
+
+const StyledApp = styled.div`
+  ${flex("column", "flex-start", "center")};
+
+  .title {
+    height: 3vh;
+    width: 100vw;
+    text-align: center;
+  }
+`;
 
 export default App;
