@@ -7,9 +7,9 @@ import Day from "./Day";
 //Constants
 import { days } from "../constants/days";
 
-const Days = () => {
+const Days = ({ showDays }) => {
   return (
-    <StyledDays>
+    <StyledDays show={showDays ? true : false}>
       {days.map((day, i) => {
         return <Day key={i} day={day} />;
       })}
@@ -18,7 +18,7 @@ const Days = () => {
 };
 
 const StyledDays = styled.section`
-  height: 97vh;
+  height: 92vh;
   width: 100vw;
 
   display: grid;
@@ -27,6 +27,8 @@ const StyledDays = styled.section`
   grid-gap: ${spacing.S};
 
   padding: ${spacing.M};
+
+  opacity: ${(props) => (props.show ? "1" : "0")};
 `;
 
 export default Days;
